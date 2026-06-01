@@ -1,0 +1,10 @@
+[
+    {
+        "role": "user",
+        "content": "hello"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello. It's great to connect with you. I'm here to help with any career guidance or questions you may have. How's your day going so far?"
+    }
+]

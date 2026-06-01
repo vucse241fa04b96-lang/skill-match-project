@@ -1,0 +1,109 @@
+Software Requirements -
+
+Python 3.10+
+
+Streamlit
+
+Pandas
+
+NumPy
+
+PyPDF2
+
+SpaCy
+
+Groq API
+
+Requests Library
+
+JSearch API (RapidAPI)
+
+VS Code / PyCharm
+
+Web Browser (Chrome, Edge, Firefox)
+
+Python Libraries-
+
+streamlit
+pandas
+numpy
+PyPDF2
+spacy
+groq
+requests
+re (built-in)
+
+Hardware Requirements -
+
+Processor: Intel Core i3 or above
+
+RAM: 4 GB minimum (8 GB recommended)
+
+Storage: 1 GB free space
+
+Internet Connection
+
+Laptop/Desktop Computer
+
+
+Functional Requirements-
+
+Resume Upload (PDF)
+
+Resume Text Extraction
+
+Resume Text Cleaning
+
+Skill Extraction from Resume
+
+Skill Normalization
+
+Outdated Skill Detection
+
+Trending Skill Recommendation
+
+Job Role Recommendation
+
+Job Ranking based on Skill Match
+
+Skill Gap Analysis
+
+Hiring Companies Recommendation
+
+Live Job Listings Retrieval
+
+AI Career Mentor Chatbot
+
+Career Roadmap Generation
+
+Project Recommendations
+
+Certification Recommendations
+
+Interview Preparation Guidance
+
+Resume Improvement Suggestions
+
+Career Progress Tracking
+
+Session-Based Chat Memory
+
+APIs Used -
+
+Groq API (Llama 3.3 70B Versatile)
+
+JSearch API (RapidAPI)
+
+Dataset Requirement -
+
+job_dataset.csv
+
+Job Roles
+
+Required Skills
+
+Skill Mapping
+
+Skill Gap Analysis Data
+
+Job Recommendation Data

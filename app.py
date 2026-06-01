@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 from upload import extract_resume_text, clean_text
@@ -7,7 +6,70 @@ from job_ranking import rank_jobs
 from skill_gap import skill_gap_detection
 from chatbot import chatbot_ui
 from hiringcompanies import get_hiring_companies
+import os
+from chat_storage import get_user_chats
+from chat_storage import load_chat
+from auth import (
+    save_user,
+    verify_user,
+    user_exists
+)
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
 
+if "username" not in st.session_state:
+    st.session_state.username = ""
+if not st.session_state.logged_in:
+
+    st.title("🔐 Login")
+
+    username = st.text_input("Username")
+    password = st.text_input(
+        "Password",
+        type="password"
+    )
+if st.button("Login"):
+
+    if verify_user(username, password):
+
+        st.session_state.logged_in = True
+        st.session_state.username = username
+
+        st.rerun()
+
+    else:
+        st.error("Invalid credentials")
+if st.button("Sign Up"):
+
+    if user_exists(username):
+
+        st.error("User already exists")
+
+    else:
+
+        save_user(username, password)
+
+        st.success(
+            "Account created successfully"
+        )
+if not st.session_state.logged_in:
+    st.stop()
+username = st.session_state.username
+
+os.makedirs(
+    f"chats/{username}",
+    exist_ok=True
+)
+import time
+
+if "chat_file" not in st.session_state:
+
+    st.session_state.chat_file = (
+        f"chats/{username}/chat_{int(time.time())}.json"
+    )
+
+
+st.write(st.session_state.chat_file)
 # ================= PAGE CONFIG =================
 st.set_page_config(
     page_title="Career Analyzer",
@@ -166,18 +228,84 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ================= SIDEBAR =================
+# Get logged-in username
+username = st.session_state.username
+
+# ================= SIDEBAR =================
 with st.sidebar:
+
     st.markdown("### ⚙️ How it works")
     st.markdown("""
-    1. **Upload** your resume (PDF)  
-    2. We **extract** skills  
-    3. Get **matched** roles  
-    4. See your **skill gaps**  
+    1. **Upload** your resume (PDF)
+    2. We **extract** skills
+    3. Get **matched** roles
+    4. See your **skill gaps**
     5. Chat with the **AI advisor**
     """)
+
     st.divider()
+
     st.caption("💡 Tip: Use a recent, text-based PDF for best results.")
 
+    # ================= NEW CHAT =================
+    if st.button("➕ New Chat"):
+
+        import time
+
+        st.session_state.messages = []
+
+        st.session_state.chat_file = (
+            f"chats/{username}/chat_{int(time.time())}.json"
+        )
+
+        st.rerun()
+
+    # ================= RECENT CHATS =================
+    st.subheader("Recent Chats")
+
+    chat_files = get_user_chats(username)
+
+    if chat_files:
+
+        for file in chat_files:
+
+            if st.button(
+                file,
+                key=f"chat_{file}"
+            ):
+
+                st.session_state.chat_file = (
+                    f"chats/{username}/{file}"
+                )
+
+                st.session_state.messages = load_chat(
+                    st.session_state.chat_file
+                )
+
+                st.rerun()
+
+    else:
+        st.info("No previous chats")
+
+    st.divider()
+
+    # ================= CURRENT USER =================
+    st.write(f"👤 Logged in as: {username}")
+
+    # ================= LOGOUT =================
+    if st.button("🚪 Logout"):
+
+        st.session_state.logged_in = False
+        st.session_state.username = ""
+
+        # Clear current chat
+        st.session_state.messages = []
+
+        # Remove active chat file
+        if "chat_file" in st.session_state:
+            del st.session_state.chat_file
+
+        st.rerun()
 # ================= SESSION =================
 st.session_state.setdefault("skills", [])
 st.session_state.setdefault("last_role", "")
@@ -329,6 +457,63 @@ if uploaded_file is not None:
                     st.success("🎉 You already have most required skills!")
                 st.markdown('</div>', unsafe_allow_html=True)
 
+        #     with tab5:
+
+        #         st.markdown("### 🏢 Hiring Companies")
+
+        #         if job_roles:
+
+        #             options = [
+        #             f"{i+1}. {job['role']}"
+        #             for i, job in enumerate(job_roles)
+        #             ]
+
+        #             selected_option = st.selectbox(
+        #             "Select a Job Role",
+        #             options,
+        #             key="hiring_role"
+        #             )
+
+        #             selected_role = job_roles[
+        #             options.index(selected_option)
+        #             ]["role"]
+
+        #             jobs = get_hiring_companies(selected_role)
+
+        #             if jobs:
+
+        #                 for job in jobs:
+
+        #                     st.markdown(f"### 🏢 {job['company']}")
+
+        #                     st.write(f"**Role:** {job['title']}")
+        #                     st.write(f"**Location:** {job['location']}, {job['state']}")
+        #                     st.write(f"**Type:** {job['employment_type']}")
+
+        #                     if job["salary_min"] or job["salary_max"]:
+        #                         st.success(
+        #                         f"💰 ₹{job['salary_min']} - ₹{job['salary_max']}"
+        #                         )
+
+        #                     st.write(job["description"])
+
+        #                     if job["apply_link"]:
+        #                         st.link_button(
+        #                          "Apply Now",
+        #                             job["apply_link"]
+        #                         )
+
+        #                     st.divider()
+
+        #             else:
+        #                 st.warning(
+        #                 f"No hiring companies found for {selected_role}"
+        #                 )
+
+        # except Exception as e:
+        #     st.error(f"⚠️ Error: {e}")
+    
+        # ---------- HIRING COMPANIES TAB ----------
             with tab5:
 
                 st.markdown("### 🏢 Hiring Companies")
@@ -336,56 +521,77 @@ if uploaded_file is not None:
                 if job_roles:
 
                     options = [
-                    f"{i+1}. {job['role']}"
-                    for i, job in enumerate(job_roles)
-                    ]
+                f"{i+1}. {job['role']}"
+                for i, job in enumerate(job_roles)
+                ]
 
-                    selected_option = st.selectbox(
-                    "Select a Job Role",
-                    options,
-                    key="hiring_role"
+                selected_option = st.selectbox(
+                 "   Select a Job Role",
+                options,
+                key="hiring_role"
+                )
+
+                selected_role = job_roles[
+                options.index(selected_option)
+                ]["role"]
+
+                jobs = get_hiring_companies(selected_role)
+
+                if jobs:
+
+                    st.success(
+                    f"Found {len(jobs)} hiring opportunities for {selected_role}"
                     )
 
-                    selected_role = job_roles[
-                    options.index(selected_option)
-                    ]["role"]
+                    for job in jobs:
 
-                    jobs = get_hiring_companies(selected_role)
+                        st.markdown(f"## 🏢 {job['company']}")
 
-                    if jobs:
+                        col1, col2 = st.columns(2)
 
-                        for job in jobs:
+                        with col1:
+                                st.write(f"**Role:** {job['title']}")
+                                st.write(f"**📍 Location:** {job['location']}")
 
-                            st.markdown(f"### 🏢 {job['company']}")
+                        with col2:
+                                st.write(f"**💼 Employment Type:** {job['employment_type']}")
+                                
 
-                            st.write(f"**Role:** {job['title']}")
-                            st.write(f"**Location:** {job['location']}, {job['state']}")
-                            st.write(f"**Type:** {job['employment_type']}")
+                                st.write(f"**💰 Salary:** {job['salary']}")
 
-                            if job["salary_min"] or job["salary_max"]:
-                                st.success(
-                                f"💰 ₹{job['salary_min']} - ₹{job['salary_max']}"
-                                )
+                        st.write("**Job Description:**")
 
-                            st.write(job["description"])
+                        st.markdown(
+        f"""
+        <div style="
+            font-size:15px;
+            line-height:1.6;
+            color:#334155;
+            margin-bottom:15px;
+        ">
+            {job['description']}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
-                            if job["apply_link"]:
-                                st.link_button(
-                                 "Apply Now",
-                                    job["apply_link"]
-                                )
+                        if job.get("apply_link"):
+                             st.link_button(
+            "🔗 Apply Now",
+            job["apply_link"]
+        )
 
-                            st.divider()
+                        st.divider()
+                    # else:
+                    #  st.warning(
+                    # f"No hiring companies found for {selected_role}"
+                    # )
 
-                    else:
-                        st.warning(
-                        f"No hiring companies found for {selected_role}"
-                        )
+                # else:
+                #     st.warning("No job roles available.")
 
         except Exception as e:
             st.error(f"⚠️ Error: {e}")
-    
-        
 # ================= CHATBOT =================
 st.markdown('<div class="card">', unsafe_allow_html=True)
 st.markdown('<div class="section-title">🤖 AI Career Chatbot</div>', unsafe_allow_html=True)
