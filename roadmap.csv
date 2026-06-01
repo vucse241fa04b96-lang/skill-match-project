@@ -1,0 +1,270 @@
+role,stage,details
+Software Engineer,Basics,Programming|DSA|OOP
+Software Engineer,Tools,Git|VS Code
+Software Engineer,Learn,System Design
+Software Engineer,Specialize,Backend|Full Stack
+
+Software Developer,Basics,Python|Java
+Software Developer,Tools,Git
+Software Developer,Learn,Application Development
+Software Developer,Specialize,Web|Desktop
+
+Full Stack Developer,Basics,HTML|CSS|JavaScript
+Full Stack Developer,Tools,React|Node.js
+Full Stack Developer,Learn,APIs|Databases
+Full Stack Developer,Specialize,MERN|MEAN
+
+Backend Developer,Basics,Server-side Programming
+Backend Developer,Tools,Node.js|Django
+Backend Developer,Learn,APIs|Databases
+Backend Developer,Specialize,Microservices
+
+Frontend Developer,Basics,HTML|CSS|JavaScript
+Frontend Developer,Tools,React
+Frontend Developer,Learn,UI/UX
+Frontend Developer,Specialize,Performance Optimization
+
+Data Scientist,Basics,Python|Statistics
+Data Scientist,Tools,Pandas|NumPy
+Data Scientist,Learn,Machine Learning
+Data Scientist,Specialize,NLP|AI
+
+Machine Learning Engineer,Basics,Python|ML Concepts
+Machine Learning Engineer,Tools,TensorFlow|PyTorch
+Machine Learning Engineer,Learn,Model Deployment
+Machine Learning Engineer,Specialize,AI Systems
+
+AI Engineer,Basics,ML|Deep Learning
+AI Engineer,Tools,PyTorch
+AI Engineer,Learn,NLP|Computer Vision
+AI Engineer,Specialize,Chatbots|Vision AI
+
+DevOps Engineer,Basics,Linux|Networking
+DevOps Engineer,Tools,Docker|Jenkins
+DevOps Engineer,Learn,CI/CD
+DevOps Engineer,Specialize,Automation
+
+Cloud Engineer,Basics,Networking|Linux
+Cloud Engineer,Tools,AWS|Azure
+Cloud Engineer,Learn,Cloud Services
+Cloud Engineer,Specialize,Deployment
+
+Data Analyst,Basics,Excel|SQL
+Data Analyst,Tools,Power BI
+Data Analyst,Learn,Data Visualization
+Data Analyst,Specialize,Business Insights
+
+BI Analyst,Basics,Data Analysis
+BI Analyst,Tools,Tableau|Power BI
+BI Analyst,Learn,Reporting
+BI Analyst,Specialize,Dashboards
+
+QA Engineer,Basics,Testing Concepts
+QA Engineer,Tools,Selenium
+QA Engineer,Learn,Manual Testing
+QA Engineer,Specialize,QA Processes
+
+Test Automation Engineer,Basics,Coding|Testing
+Test Automation Engineer,Tools,Selenium|Cypress
+Test Automation Engineer,Learn,Automation Frameworks
+Test Automation Engineer,Specialize,CI/CD Testing
+
+iOS Developer,Basics,Swift
+iOS Developer,Tools,Xcode
+iOS Developer,Learn,App Development
+iOS Developer,Specialize,iOS Apps
+
+Android Developer,Basics,Kotlin
+Android Developer,Tools,Android Studio
+Android Developer,Learn,App Development
+Android Developer,Specialize,Android Apps
+
+UI Designer,Basics,Design Principles
+UI Designer,Tools,Figma
+UI Designer,Learn,Layout|Colors
+UI Designer,Specialize,App UI
+
+UX Designer,Basics,User Research
+UX Designer,Tools,Figma
+UX Designer,Learn,Wireframing
+UX Designer,Specialize,User Experience
+
+Product Designer,Basics,UI|UX
+Product Designer,Tools,Figma
+Product Designer,Learn,Design Thinking
+Product Designer,Specialize,End-to-End Design
+
+Cybersecurity Analyst,Basics,Networking|Security
+Cybersecurity Analyst,Tools,Wireshark
+Cybersecurity Analyst,Learn,Threat Detection
+Cybersecurity Analyst,Specialize,Security Analysis
+
+Python Developer,Basics,Python
+Python Developer,Tools,Django|Flask
+Python Developer,Learn,Web Development
+Python Developer,Specialize,Backend
+
+Data Engineer,Basics,SQL|Python
+Data Engineer,Tools,Spark
+Data Engineer,Learn,Data Pipelines
+Data Engineer,Specialize,Big Data
+
+Network Engineer,Basics,Networking
+Network Engineer,Tools,Cisco
+Network Engineer,Learn,Routing|Switching
+Network Engineer,Specialize,Infrastructure
+
+Cloud Architect,Basics,Cloud|Networking
+Cloud Architect,Tools,AWS
+Cloud Architect,Learn,Architecture Design
+Cloud Architect,Specialize,Scalable Systems
+
+Systems Engineer,Basics,OS|Linux
+Systems Engineer,Tools,Linux Tools
+Systems Engineer,Learn,System Management
+Systems Engineer,Specialize,Infrastructure
+
+Java Developer,Basics,Java
+Java Developer,Tools,Spring Boot
+Java Developer,Learn,Backend Development
+Java Developer,Specialize,Enterprise Apps
+
+.NET Developer,Basics,C#
+.NET Developer,Tools,.NET
+.NET Developer,Learn,Web Apps
+.NET Developer,Specialize,Enterprise Apps
+
+Web Developer,Basics,HTML|CSS|JavaScript
+Web Developer,Tools,React
+Web Developer,Learn,Websites
+Web Developer,Specialize,Frontend|Full Stack
+
+SDET,Basics,Testing|Coding
+SDET,Tools,Selenium
+SDET,Learn,Automation
+SDET,Specialize,Test Frameworks
+
+Solutions Architect,Basics,System Design
+Solutions Architect,Tools,Cloud
+Solutions Architect,Learn,Architecture
+Solutions Architect,Specialize,Enterprise Systems
+
+Big Data Specialist,Basics,Data Systems
+Big Data Specialist,Tools,Hadoop|Spark
+Big Data Specialist,Learn,Data Processing
+Big Data Specialist,Specialize,Big Data
+
+Fintech Engineer,Basics,Finance|Coding
+Fintech Engineer,Tools,APIs
+Fintech Engineer,Learn,Payment Systems
+Fintech Engineer,Specialize,Fintech Apps
+
+AI Prompt Engineer,Basics,AI Concepts
+AI Prompt Engineer,Tools,LLMs|ChatGPT
+AI Prompt Engineer,Learn,Prompt Writing
+AI Prompt Engineer,Specialize,AI Workflows
+
+Blockchain Developer,Basics,Blockchain
+Blockchain Developer,Tools,Solidity
+Blockchain Developer,Learn,Smart Contracts
+Blockchain Developer,Specialize,Web3 Apps
+
+Robotics Engineer,Basics,Robotics|Coding
+Robotics Engineer,Tools,ROS
+Robotics Engineer,Learn,Automation
+Robotics Engineer,Specialize,Robotics Systems
+
+JavaScript Developer,Basics,JavaScript
+JavaScript Developer,Tools,Node.js
+JavaScript Developer,Learn,Web Apps
+JavaScript Developer,Specialize,Frontend|Backend
+
+AR/VR Developer,Basics,3D Concepts
+AR/VR Developer,Tools,Unity
+AR/VR Developer,Learn,AR/VR
+AR/VR Developer,Specialize,Immersive Apps
+
+IoT Engineer,Basics,Embedded Systems
+IoT Engineer,Tools,Arduino
+IoT Engineer,Learn,Sensors|Connectivity
+IoT Engineer,Specialize,Smart Devices
+
+Ethical Hacker,Basics,Networking
+Ethical Hacker,Tools,Kali Linux
+Ethical Hacker,Learn,Penetration Testing
+Ethical Hacker,Specialize,Security
+
+Site Reliability Engineer,Basics,Systems|DevOps
+Site Reliability Engineer,Tools,Kubernetes
+Site Reliability Engineer,Learn,Monitoring
+Site Reliability Engineer,Specialize,Reliability
+
+Game Developer,Basics,Programming
+Game Developer,Tools,Unity
+Game Developer,Learn,Game Design
+Game Developer,Specialize,2D|3D Games
+
+Product Manager,Basics,Business|Tech
+Product Manager,Tools,Jira
+Product Manager,Learn,Product Lifecycle
+Product Manager,Specialize,Strategy
+
+Project Manager,Basics,Planning
+Project Manager,Tools,Agile Tools
+Project Manager,Learn,Scrum
+Project Manager,Specialize,Delivery
+
+Marketing Specialist,Basics,Marketing
+Marketing Specialist,Tools,Ads Platforms
+Marketing Specialist,Learn,Campaigns
+Marketing Specialist,Specialize,Branding
+
+Digital Marketing Specialist,Basics,Online Marketing
+Digital Marketing Specialist,Tools,Google Ads
+Digital Marketing Specialist,Learn,SEO|SEM
+Digital Marketing Specialist,Specialize,Digital Campaigns
+
+SEO Specialist,Basics,SEO
+SEO Specialist,Tools,Ahrefs
+SEO Specialist,Learn,Ranking Techniques
+SEO Specialist,Specialize,Optimization
+
+Content Writer,Basics,Writing
+Content Writer,Tools,Medium
+Content Writer,Learn,Storytelling
+Content Writer,Specialize,Blogs
+
+Copywriter,Basics,Persuasion
+Copywriter,Tools,Ads
+Copywriter,Learn,Sales Writing
+Copywriter,Specialize,Marketing Copy
+
+Business Analyst,Basics,Business|Data
+Business Analyst,Tools,Excel
+Business Analyst,Learn,Analysis
+Business Analyst,Specialize,Insights
+
+Operations Manager,Basics,Operations
+Operations Manager,Tools,ERP
+Operations Manager,Learn,Workflow
+Operations Manager,Specialize,Efficiency
+
+Sales Executive,Basics,Communication
+Sales Executive,Tools,CRM
+Sales Executive,Learn,Sales Techniques
+Sales Executive,Specialize,Closing Deals
+
+Technical Writer,Basics,Writing|Tech
+Technical Writer,Tools,Markdown
+Technical Writer,Learn,Documentation
+Technical Writer,Specialize,Manuals
+
+Market Research Analyst,Basics,Research
+Market Research Analyst,Tools,Surveys
+Market Research Analyst,Learn,Data Analysis
+Market Research Analyst,Specialize,Market Trends
+
+Graphic Designer,Basics,Design Principles
+Graphic Designer,Tools,Photoshop
+Graphic Designer,Learn,Visual Design
+Graphic Designer,Specialize,Graphics
