@@ -7,8 +7,13 @@ from skill_gap import skill_gap_detection
 from chatbot import chatbot_ui
 from hiringcompanies import get_hiring_companies
 import os
-from chat_storage import get_user_chats
+from chat_storage import get_chat_title, get_user_chats
 from chat_storage import load_chat
+from chat_storage import (
+    get_user_chats,
+    load_chat,
+    get_chat_title
+)
 from auth import (
     save_user,
     verify_user,
@@ -261,6 +266,28 @@ with st.sidebar:
         st.rerun()
 
     # ================= RECENT CHATS =================
+    # st.subheader("Recent Chats")
+
+    # chat_files = get_user_chats(username)
+
+    # if chat_files:
+
+    #     for file in chat_files:
+
+    #         if st.button(
+    #             file,
+    #             key=f"chat_{file}"
+    #         ):
+
+    #             st.session_state.chat_file = (
+    #                 f"chats/{username}/{file}"
+    #             )
+
+    #             st.session_state.messages = load_chat(
+    #                 st.session_state.chat_file
+    #             )
+
+    #             st.rerun()
     st.subheader("Recent Chats")
 
     chat_files = get_user_chats(username)
@@ -269,21 +296,22 @@ with st.sidebar:
 
         for file in chat_files:
 
-            if st.button(
-                file,
-                key=f"chat_{file}"
-            ):
+            chat_path = f"chats/{username}/{file}"
 
-                st.session_state.chat_file = (
-                    f"chats/{username}/{file}"
-                )
+            title = get_chat_title(chat_path)
+
+            if st.button(
+            title,
+            key=f"chat_{file}"
+        ):
+
+                st.session_state.chat_file = chat_path
 
                 st.session_state.messages = load_chat(
-                    st.session_state.chat_file
-                )
+                chat_path
+            )
 
                 st.rerun()
-
     else:
         st.info("No previous chats")
 
